@@ -23,3 +23,33 @@ Primeiro, definiremos claramente o problema que o seu autômato (a máquina de c
 
 **Estado Inicial e Estados Finais**: Identificar claramente qual é o estado inicial (provavelmente "Esperando seleção") e quais são os estados finais (possivelmente "Entregando café" ou "Devolvendo troco").
 
+# Esboco de MVP
+A ideia é começar com um projeto menos complexo com poucos estados e transicoes, e evoluir ao longo do quadrimestre
+
+**Estados**
+Vamos considerar um conjunto simplificado de estados pelos quais a máquina de café pode passar:
+
+1. Esperando Seleção (ES): O estado inicial onde a máquina está pronta para que o usuário faça sua seleção de café.
+2. Esperando Pagamento (EP): O usuário selecionou um tipo de café e agora deve inserir o pagamento.
+3. Preparando Café (PC): O pagamento foi recebido; a máquina está preparando o café selecionado.
+4. Entregando Café (EC): O estado final onde o café é entregue ao usuário.
+
+**Alfabeto (Entradas)**
+O alfabeto consiste em símbolos que representam as ações ou entradas possíveis na máquina:
+
+- Seleção de Café (S): Representa a ação de selecionar um tipo de café. Para simplificar, podemos considerar apenas um tipo de café neste MVP.
+- Pagamento Correto (P): Representa a inserção de um pagamento adequado para o café selecionado.
+- Pagamento Insuficiente (I): Representa a inserção de um pagamento insuficiente.
+
+**Transições**
+As transições entre estados são definidas pelas ações do usuário representadas no alfabeto:
+- ES --S-->EP: De "Esperando Seleção" para "Esperando Pagamento" após a seleção de café.
+- EP --P-->PC: De "Esperando Pagamento" para "Preparando Café" após receber o pagamento correto.
+- EP --I--> EP: Permanece em "Esperando Pagamento" se o pagamento for insuficiente.
+- PC ----> EC: De "Preparando Café" para "Entregando Café", transição automática uma vez que o café está pronto.
+
+**Estado Inicial**
+Esperando Seleção (ES): A máquina começa neste estado, esperando que o usuário faça uma seleção.
+
+**Estados Finais**
+Entregando Café (EC): Considerado um estado final, onde a máquina entregou o café e o processo está completo.
