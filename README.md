@@ -33,13 +33,18 @@ Vamos considerar um conjunto simplificado de estados pelos quais a máquina de c
 2. Esperando Pagamento (EP): O usuário selecionou um tipo de café e agora deve inserir o pagamento.
 3. Preparando Café (PC): O pagamento foi recebido; a máquina está preparando o café selecionado.
 4. Entregando Café (EC): O estado final onde o café é entregue ao usuário.
+5. Selecionando Tipo de Café (STC): Após a escolha inicial de fazer um café, mas antes do pagamento, permitindo a seleção de diferentes tipos de café.
+6. Cancelando Pedido (CP): Um estado transitório para quando um pedido é cancelado, levando de volta ao estado inicial.
+7. Devolvendo Troco (DT): Estado final após entregar o café e devolver o troco, se necessário.
 
 **Alfabeto (Entradas)**
 O alfabeto consiste em símbolos que representam as ações ou entradas possíveis na máquina:
 
-- Seleção de Café (S): Representa a ação de selecionar um tipo de café. Para simplificar, podemos considerar apenas um tipo de café neste MVP.
+- Seleção de Café (S): Representa a ação de selecionar um tipo de café. `Expresso`, `Cappuccino`, `Latte`.
 - Pagamento Correto (P): Representa a inserção de um pagamento adequado para o café selecionado.
 - Pagamento Insuficiente (I): Representa a inserção de um pagamento insuficiente.
+- Cancelar Pedido: Cancelar.
+- Pagamento Excedente: Excedente (para quando o usuário insere mais dinheiro do que o necessário).
 
 **Transições**
 As transições entre estados são definidas pelas ações do usuário representadas no alfabeto:
