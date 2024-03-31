@@ -7,17 +7,19 @@ Primeiro, definiremos claramente o problema que o seu autômato (a máquina de c
 ## 2. Modelagem do Autômato
 **Estados**: Identificar todos os estados possíveis que a máquina de café pode ter. Alguns exemplos sugeridos pelo grupo:
 
-- Esperando seleção
-- Esperando pagamento
-- Preparando café
-- Entregando café
-- Devolvendo troco (se aplicável)
+- Esperando seleção (q0)
+- Esperando pagamento (q1)
+- Preparando café (q2)
+- Entregando café (q3)
+- Devolvendo troco (q4)
+- Cancelando Pedido (q5)
   
 **Alfabeto**: Determinar as entradas (símbolos do alfabeto) que a máquina aceitará. Isso pode incluir:
 
-- Seleção de tipo de café (expresso, com leite, etc.)
-- Inserção de diferentes valores de dinheiro
-- Botão de cancelamento
+- 0:Falso
+- 1:Verdadeiro
+Quando a condição estabelecida pela máquina é atendida, o caracter 1 do alfabeto é colocado na entrada do autômato. Caso contrário, o caracter 0 é inserido.
+
 
 **Transições**: Definir as transições entre estados baseadas nas entradas. Por exemplo, passar do estado de "Esperando pagamento" para "Preparando café" após o pagamento adequado.
 
@@ -29,13 +31,13 @@ A ideia é começar com um projeto menos complexo com poucos estados e transicoe
 **Estados**
 Vamos considerar um conjunto simplificado de estados pelos quais a máquina de café pode passar:
 
-1. Esperando Seleção (ES): O estado inicial onde a máquina está pronta para que o usuário faça sua seleção de café.
-2. Esperando Pagamento (EP): O usuário selecionou um tipo de café e agora deve inserir o pagamento.
-3. Preparando Café (PC): O pagamento foi recebido; a máquina está preparando o café selecionado.
-4. Entregando Café (EC): O estado final onde o café é entregue ao usuário.
-5. Selecionando Tipo de Café (STC): Após a escolha inicial de fazer um café, mas antes do pagamento, permitindo a seleção de diferentes tipos de café.
-6. Cancelando Pedido (CP): Um estado transitório para quando um pedido é cancelado, levando de volta ao estado inicial.
-7. Devolvendo Troco (DT): Estado final após entregar o café e devolver o troco, se necessário.
+1. Esperando Seleção (q0): O estado inicial onde a máquina está pronta para que o usuário faça sua seleção de café.
+2. Esperando Pagamento (q1): O usuário selecionou um tipo de café e agora deve inserir o pagamento.
+3. Preparando Café (q2): O pagamento foi recebido; a máquina está preparando o café selecionado.
+4. Entregando Café (q3): O estado final onde o café é entregue ao usuário.
+5. Devolvendo Troco (q4): Estado final após entregar o café e devolver o troco, se necessário.
+6. Cancelando Pedido (q5): Um estado transitório para quando um pedido é cancelado, levando de volta ao estado inicial.
+
 
 **Alfabeto (Entradas)**
 O alfabeto consiste em símbolos que representam as ações ou entradas possíveis na máquina:
@@ -54,7 +56,8 @@ As transições entre estados são definidas pelas ações do usuário represent
 - PC ----> EC: De "Preparando Café" para "Entregando Café", transição automática uma vez que o café está pronto.
 
 **Estado Inicial**
-Esperando Seleção (ES): A máquina começa neste estado, esperando que o usuário faça uma seleção.
+Esperando Seleção (q0): A máquina começa neste estado, esperando que o usuário faça uma seleção.
 
 **Estados Finais**
-Entregando Café (EC): Considerado um estado final, onde a máquina entregou o café e o processo está completo.
+Entregando Café (q3)*: O café está pronto e é entregue ao usuário (estado final).
+Devolvendo Troco (q4)*: O estado opcional onde a máquina devolve o troco, se o pagamento excedeu o valor do café (estado final).
