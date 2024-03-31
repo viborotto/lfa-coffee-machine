@@ -42,11 +42,9 @@ Vamos considerar um conjunto simplificado de estados pelos quais a máquina de c
 **Alfabeto (Entradas)**
 O alfabeto consiste em símbolos que representam as ações ou entradas possíveis na máquina:
 
-- Seleção de Café (S): Representa a ação de selecionar um tipo de café. `Expresso`, `Cappuccino`, `Latte`.
-- Pagamento Correto (P): Representa a inserção de um pagamento adequado para o café selecionado.
-- Pagamento Insuficiente (I): Representa a inserção de um pagamento insuficiente.
-- Cancelar Pedido: Cancelar.
-- Pagamento Excedente: Excedente (para quando o usuário insere mais dinheiro do que o necessário).
+- 0:Falso
+- 1:Verdadeiro
+Quando a condição estabelecida pela máquina é atendida, o caracter 1 do alfabeto é colocado na entrada do autômato. Caso contrário, o caracter 0 é inserido.
 
 **Transições**
 As transições entre estados são definidas pelas ações do usuário representadas no alfabeto:
