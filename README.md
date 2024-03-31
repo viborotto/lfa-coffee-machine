@@ -50,10 +50,21 @@ O alfabeto consiste em símbolos que representam as ações ou entradas possíve
 
 **Transições**
 As transições entre estados são definidas pelas ações do usuário representadas no alfabeto:
-- ES --S-->EP: De "Esperando Seleção" para "Esperando Pagamento" após a seleção de café.
-- EP --P-->PC: De "Esperando Pagamento" para "Preparando Café" após receber o pagamento correto.
-- EP --I--> EP: Permanece em "Esperando Pagamento" se o pagamento for insuficiente.
-- PC ----> EC: De "Preparando Café" para "Entregando Café", transição automática uma vez que o café está pronto.
+Estado atual|	Entrada |	Estado seguinte
+q0	          0	        q5
+q0	          1	        q2
+q1	          0        	q5
+q1	          1	        q2
+q2	          0        	q2
+q2	          1        	q3
+q3	          0        	q3
+q3	          1        	q4
+q4	          0	        q4
+q4	          1	        q4
+q5	          0	        q5
+q5	          1	        q5
+![image](https://github.com/viborotto/lfa-coffee-machine/assets/60987091/ac46a610-a659-4d4b-9317-534f2e11e452)
+
 
 **Estado Inicial**
 Esperando Seleção (q0): A máquina começa neste estado, esperando que o usuário faça uma seleção.
