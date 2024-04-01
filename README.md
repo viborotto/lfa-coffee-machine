@@ -58,3 +58,6 @@ Esperando Seleção (q0): A máquina começa neste estado, esperando que o usuá
 **Estados Finais**
 Entregando Café (q3)*: O café está pronto e é entregue ao usuário (estado final).
 Devolvendo Troco (q4)*: O estado opcional onde a máquina devolve o troco, se o pagamento excedeu o valor do café (estado final).
+
+### Diagrama AFD
+![diagrama](https://github.com/viborotto/lfa-coffee-machine/blob/main/DFA%20Visualization.gv.png)
