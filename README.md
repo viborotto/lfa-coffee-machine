@@ -1,4 +1,4 @@
-# lfa-coffee-machine
+# :coffee: lfa-coffee-machine
 Projeto python para matéria de LFA da UFABC 1.2024
 
 ## 1. Definição do Problema
