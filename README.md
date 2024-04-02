@@ -1,6 +1,11 @@
 # :coffee: lfa-coffee-machine
 Projeto python para matéria de LFA da UFABC 1.2024
 
+Grupo:
+- :technologist: David Pianura
+- :technologist: Felipe Moreira
+- :woman_technologist: Vittória Borotto
+
 ## 1. Definição do Problema
 Primeiro, definiremos claramente o problema que o seu autômato (a máquina de café) precisa resolver. Isso inclui identificar os estados possíveis da máquina (por exemplo, esperando seleção, pagamento recebido, café sendo feito, etc.) e os eventos ou entradas que causam transições entre esses estados (por exemplo, seleção de um tipo de café, inserção de dinheiro, etc.).
 
